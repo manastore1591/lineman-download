@@ -351,10 +351,13 @@
       <details data-os="mac">
         <summary>macOS</summary>
         <ol>
-          <li>Download the <code>.dmg</code> file from the GitHub Actions artifacts or releases.</li>
+          <li>Download the <code>.dmg</code> file.</li>
           <li>Open the DMG and drag <b>Stagman</b> into your <b>Applications</b> folder.</li>
-          <li>On first launch, if macOS alerts about an unsigned developer, right-click Stagman in Applications and choose <b>Open</b>.</li>
-          <li>Allow Keychain access when prompted so Stagman can securely store your tokens.</li>
+          <li><b>First-time launch:</b> Because Stagman is open-source and not signed with a paid Apple certificate, macOS may say <i>"Stagman is damaged and can't be opened"</i>. To fix this:
+            <br>Open Terminal and run: <code>xattr -cr /Applications/Stagman.app</code>
+            <br><i>(Or go to <b>System Settings → Privacy & Security</b> and click <b>Open Anyway</b>).</i>
+          </li>
+          <li>Open Stagman from Applications!</li>
         </ol>
       </details>
 
