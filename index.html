@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Stagman — Download Fast API Client & Native Load Tester</title>
-  <meta name="description" content="Fast, local-first API client and native load tester powered by Tauri 2 and Rust. Built by Antigravity with Gemini 3.8 Flash.">
+  <meta name="description" content="Fast, local-first API client and native load tester powered by Tauri 2 and Rust.">
   <link rel="icon" href="favicon.png">
   <meta property="og:title" content="Stagman — Fast API Client & Native Load Tester">
   <meta property="og:description" content="Fast, local-first API client and native load tester powered by Tauri 2 and Rust.">
@@ -60,19 +60,6 @@
       font-size: 1.15rem;
       line-height: 1.5;
     }
-    .ai-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(99, 102, 241, 0.12);
-      border: 1px solid rgba(99, 102, 241, 0.3);
-      padding: 6px 14px;
-      border-radius: 999px;
-      font-size: 0.82rem;
-      font-weight: 600;
-      color: #c7d2fe;
-    }
-    .ai-pill svg { fill: currentColor; }
     
     .grid {
       display: grid;
@@ -226,6 +213,9 @@
       font-size: 0.92rem;
     }
     details li { margin-bottom: 8px; }
+    .checksums { text-align: center; color: var(--muted); font-size: 14px; margin-top: 18px; }
+    .checksums a { color: inherit; }
+    .fallback { margin-top: 14px; padding: 12px 16px; border-left: 3px solid #f59e0b; background: rgba(245, 158, 11, 0.08); border-radius: 6px; }
     code {
       background: rgba(255, 255, 255, 0.08);
       padding: 2px 7px;
@@ -280,10 +270,6 @@
       <img src="icon.png" alt="Stagman icon" class="app-icon">
       <h1>Stagman</h1>
       <p class="tagline">Fast, local-first desktop API client & native load testing engine. No web overhead, no bloat.</p>
-      <div class="ai-pill">
-        <svg viewBox="0 0 24 24" width="16" height="16"><path d="M12 2L14.4 7.2L20 9.6L14.4 12L12 17.2L9.6 12L4 9.6L9.6 7.2L12 2Z"/></svg>
-        Built by Antigravity only by Gemini 3.8 Flash model
-      </div>
     </header>
 
     <div class="grid" id="downloads">
@@ -318,6 +304,13 @@
       </a>
     </div>
 
+    <p class="checksums">
+      Verify every download against <a href="files/SHA256SUMS.txt">SHA256SUMS.txt</a> before installing.
+      Other packages: <a href="files/Stagman_0.1.0_x64_en-US.msi">.msi</a> ·
+      <a href="files/Stagman_0.1.0_amd64.AppImage">.AppImage</a> ·
+      <a href="files/Stagman-0.1.0-1.x86_64.rpm">.rpm</a>
+    </p>
+
     <!-- Highlights -->
     <section>
       <h3>⚡ Built for Performance & Privacy</h3>
@@ -348,34 +341,41 @@
     <!-- Installation Steps -->
     <section>
       <h3>📦 Installation Guide</h3>
+      <p>Each package is listed with its SHA-256 hash in <a href="files/SHA256SUMS.txt"><code>SHA256SUMS.txt</code></a>. Download it next to your package and check the hash before installing; do not install a file whose hash does not match.</p>
+
       <details data-os="mac">
         <summary>macOS</summary>
         <ol>
-          <li>Download the <code>.dmg</code> file.</li>
+          <li>Download the <code>.dmg</code> file and <a href="files/SHA256SUMS.txt"><code>SHA256SUMS.txt</code></a> into the same folder.</li>
+          <li>Verify it in Terminal, from that folder: <code>shasum -a 256 -c SHA256SUMS.txt --ignore-missing</code>
+            <br>The <code>.dmg</code> must be reported as <code>OK</code>. (Or run <code>shasum -a 256 Stagman_*.dmg</code> and compare the hash with the one listed for it.)</li>
           <li>Open the DMG and drag <b>Stagman</b> into your <b>Applications</b> folder.</li>
-          <li><b>First-time launch:</b> Because Stagman is open-source and not signed with a paid Apple certificate, macOS may say <i>"Stagman is damaged and can't be opened"</i>. To fix this:
-            <br>Open Terminal and run: <code>xattr -cr /Applications/Stagman.app</code>
-            <br><i>(Or go to <b>System Settings → Privacy & Security</b> and click <b>Open Anyway</b>).</i>
-          </li>
-          <li>Open Stagman from Applications!</li>
+          <li>Open Stagman from Applications. A signed and notarized build opens normally.</li>
         </ol>
+        <div class="fallback">
+          <b>Fallback for unsigned builds only.</b> The macOS build currently hosted on this page is <b>not signed or notarized</b> with an Apple Developer ID, so macOS may refuse to open it and say <i>"Stagman is damaged and can't be opened"</i>. Only after the checksum above matches, either go to <b>System Settings → Privacy &amp; Security</b> and click <b>Open Anyway</b>, or run in Terminal:
+          <br><code>xattr -cr /Applications/Stagman.app</code>
+          <br>This recursively removes the quarantine attribute (and other extended attributes) that macOS adds to downloaded files. Gatekeeper then skips its check for that copy of the app, so you are relying only on the checksum and on this download page. Never use it on an app whose checksum you have not verified.
+        </div>
       </details>
 
       <details data-os="windows">
         <summary>Windows</summary>
         <ol>
-          <li>Download the <code>.msi</code> installer or portable zip package.</li>
+          <li>Download the <code>.exe</code> setup or <code>.msi</code> installer and <a href="files/SHA256SUMS.txt"><code>SHA256SUMS.txt</code></a>.</li>
+          <li>Verify it in PowerShell or Command Prompt: <code>certutil -hashfile Stagman_0.1.0_x64-setup.exe SHA256</code> and compare the hash with the one listed for that file.</li>
           <li>Run the installer and follow the prompt.</li>
-          <li>If Windows SmartScreen appears, click <b>More info → Run anyway</b>.</li>
+          <li>The Windows installer is not code-signed, so SmartScreen may warn. Only after the hash matches, click <b>More info → Run anyway</b>.</li>
         </ol>
       </details>
 
       <details data-os="linux">
         <summary>Ubuntu / Linux</summary>
         <ol>
-          <li>Download the <code>.deb</code> or <code>.AppImage</code> package.</li>
-          <li>For Debian/Ubuntu: <code>sudo dpkg -i stagman_*.deb</code></li>
-          <li>For AppImage: <code>chmod +x Stagman-*.AppImage && ./Stagman-*.AppImage</code></li>
+          <li>Download the <code>.deb</code> or <code>.AppImage</code> package and <a href="files/SHA256SUMS.txt"><code>SHA256SUMS.txt</code></a>.</li>
+          <li>Verify it: <code>sha256sum -c SHA256SUMS.txt --ignore-missing</code> (or <code>shasum -a 256 -c SHA256SUMS.txt --ignore-missing</code>).</li>
+          <li>For Debian/Ubuntu: <code>sudo dpkg -i Stagman_*.deb</code></li>
+          <li>For AppImage: <code>chmod +x Stagman_*.AppImage && ./Stagman_*.AppImage</code></li>
         </ol>
       </details>
     </section>
@@ -392,7 +392,7 @@
     </div>
 
     <footer>
-      Stagman · Built entirely by <b>Antigravity</b> only by <b>Gemini 3.8 Flash model</b> · Copyright © 2026 <a href="https://github.com/manastore1591" target="_blank" rel="noopener">manastore1591</a>
+      Stagman · Copyright © 2026 <a href="https://github.com/manastore1591" target="_blank" rel="noopener">Devi Srinivas Vasamsetti (Mana Store)</a>
     </footer>
   </main>
 
