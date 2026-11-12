@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Stagman — Download Fast API Client & Native Load Tester</title>
+  <title>Lineman — Download Fast API Client & Native Load Tester</title>
   <meta name="description" content="Fast, local-first API client and native load tester powered by Tauri 2 and Rust.">
   <link rel="icon" href="favicon.png">
-  <meta property="og:title" content="Stagman — Fast API Client & Native Load Tester">
+  <meta property="og:title" content="Lineman — Fast API Client & Native Load Tester">
   <meta property="og:description" content="Fast, local-first API client and native load tester powered by Tauri 2 and Rust.">
   <meta property="og:image" content="icon.png">
   <style>
@@ -267,14 +267,14 @@
 <body>
   <main>
     <header>
-      <img src="icon.png" alt="Stagman icon" class="app-icon">
-      <h1>Stagman</h1>
+      <img src="icon.png" alt="Lineman icon" class="app-icon">
+      <h1>Lineman</h1>
       <p class="tagline">Fast, local-first desktop API client & native load testing engine. No web overhead, no bloat.</p>
     </header>
 
     <div class="grid" id="downloads">
       <!-- Mac -->
-      <a class="card" data-os="mac" href="files/Stagman_0.1.0_universal.dmg" download>
+      <a class="card" data-os="mac" href="files/Lineman_0.1.0_universal.dmg" download>
         <svg class="card-icon" viewBox="0 0 24 24" fill="currentColor">
           <path d="M16.37 12.8c-.02-2.3 1.88-3.4 1.97-3.46-1.07-1.57-2.74-1.78-3.33-1.8-1.42-.15-2.77.83-3.49.83-.72 0-1.83-.81-3.01-.79-1.55.02-2.98.9-3.78 2.29-1.61 2.8-.41 6.93 1.16 9.2.77 1.11 1.68 2.36 2.88 2.31 1.16-.05 1.59-.75 2.99-.75 1.4 0 1.79.75 3.01.72 1.24-.02 2.03-1.13 2.79-2.25.88-1.29 1.24-2.54 1.26-2.6-.03-.01-2.42-.93-2.45-3.7zM14.1 6.03c.64-.77 1.07-1.85.95-2.92-.92.04-2.03.61-2.69 1.38-.59.68-1.11 1.77-.97 2.82 1.02.08 2.07-.52 2.71-1.28z"/>
         </svg>
@@ -284,7 +284,7 @@
       </a>
 
       <!-- Windows -->
-      <a class="card" data-os="windows" href="files/Stagman_0.1.0_x64-setup.exe" download>
+      <a class="card" data-os="windows" href="files/Lineman_0.1.0_x64-setup.exe" download>
         <svg class="card-icon" viewBox="0 0 24 24" fill="currentColor">
           <path d="M3 5.5l7.4-1v7.1H3V5.5zm0 13l7.4 1v-7H3v6zm8.3 1.1L21 21v-8.4h-9.7v7zm0-15.2v7.2H21V3l-9.7 1.4z"/>
         </svg>
@@ -294,7 +294,7 @@
       </a>
 
       <!-- Linux -->
-      <a class="card" data-os="linux" href="files/Stagman_0.1.0_amd64.deb" download>
+      <a class="card" data-os="linux" href="files/Lineman_0.1.0_amd64.deb" download>
         <svg class="card-icon" viewBox="0 0 24 24" fill="currentColor">
           <circle cx="12" cy="12" r="3"/><circle cx="12" cy="3.5" r="2.2"/><circle cx="4.6" cy="16.3" r="2.2"/><circle cx="19.4" cy="16.3" r="2.2"/><path d="M12 6v3M7 15l2.5-1.5M17 15l-2.5-1.5" stroke="currentColor" stroke-width="1.6" fill="none"/>
         </svg>
@@ -306,9 +306,9 @@
 
     <p class="checksums">
       Verify every download against <a href="files/SHA256SUMS.txt">SHA256SUMS.txt</a> before installing.
-      Other packages: <a href="files/Stagman_0.1.0_x64_en-US.msi">.msi</a> ·
-      <a href="files/Stagman_0.1.0_amd64.AppImage">.AppImage</a> ·
-      <a href="files/Stagman-0.1.0-1.x86_64.rpm">.rpm</a>
+      Other packages: <a href="files/Lineman_0.1.0_x64_en-US.msi">.msi</a> ·
+      <a href="files/Lineman_0.1.0_amd64.AppImage">.AppImage</a> ·
+      <a href="files/Lineman-0.1.0-1.x86_64.rpm">.rpm</a>
     </p>
 
     <!-- Highlights -->
@@ -348,13 +348,13 @@
         <ol>
           <li>Download the <code>.dmg</code> file and <a href="files/SHA256SUMS.txt"><code>SHA256SUMS.txt</code></a> into the same folder.</li>
           <li>Verify it in Terminal, from that folder: <code>shasum -a 256 -c SHA256SUMS.txt --ignore-missing</code>
-            <br>The <code>.dmg</code> must be reported as <code>OK</code>. (Or run <code>shasum -a 256 Stagman_*.dmg</code> and compare the hash with the one listed for it.)</li>
-          <li>Open the DMG and drag <b>Stagman</b> into your <b>Applications</b> folder.</li>
-          <li>Open Stagman from Applications. A signed and notarized build opens normally.</li>
+            <br>The <code>.dmg</code> must be reported as <code>OK</code>. (Or run <code>shasum -a 256 Lineman_*.dmg</code> and compare the hash with the one listed for it.)</li>
+          <li>Open the DMG and drag <b>Lineman</b> into your <b>Applications</b> folder.</li>
+          <li>Open Lineman from Applications. A signed and notarized build opens normally.</li>
         </ol>
         <div class="fallback">
-          <b>Fallback for unsigned builds only.</b> The macOS build currently hosted on this page is <b>not signed or notarized</b> with an Apple Developer ID, so macOS may refuse to open it and say <i>"Stagman is damaged and can't be opened"</i>. Only after the checksum above matches, either go to <b>System Settings → Privacy &amp; Security</b> and click <b>Open Anyway</b>, or run in Terminal:
-          <br><code>xattr -cr /Applications/Stagman.app</code>
+          <b>Fallback for unsigned builds only.</b> The macOS build currently hosted on this page is <b>not signed or notarized</b> with an Apple Developer ID, so macOS may refuse to open it and say <i>"Lineman is damaged and can't be opened"</i>. Only after the checksum above matches, either go to <b>System Settings → Privacy &amp; Security</b> and click <b>Open Anyway</b>, or run in Terminal:
+          <br><code>xattr -cr /Applications/Lineman.app</code>
           <br>This recursively removes the quarantine attribute (and other extended attributes) that macOS adds to downloaded files. Gatekeeper then skips its check for that copy of the app, so you are relying only on the checksum and on this download page. Never use it on an app whose checksum you have not verified.
         </div>
       </details>
@@ -363,7 +363,7 @@
         <summary>Windows</summary>
         <ol>
           <li>Download the <code>.exe</code> setup or <code>.msi</code> installer and <a href="files/SHA256SUMS.txt"><code>SHA256SUMS.txt</code></a>.</li>
-          <li>Verify it in PowerShell or Command Prompt: <code>certutil -hashfile Stagman_0.1.0_x64-setup.exe SHA256</code> and compare the hash with the one listed for that file.</li>
+          <li>Verify it in PowerShell or Command Prompt: <code>certutil -hashfile Lineman_0.1.0_x64-setup.exe SHA256</code> and compare the hash with the one listed for that file.</li>
           <li>Run the installer and follow the prompt.</li>
           <li>The Windows installer is not code-signed, so SmartScreen may warn. Only after the hash matches, click <b>More info → Run anyway</b>.</li>
         </ol>
@@ -374,8 +374,8 @@
         <ol>
           <li>Download the <code>.deb</code> or <code>.AppImage</code> package and <a href="files/SHA256SUMS.txt"><code>SHA256SUMS.txt</code></a>.</li>
           <li>Verify it: <code>sha256sum -c SHA256SUMS.txt --ignore-missing</code> (or <code>shasum -a 256 -c SHA256SUMS.txt --ignore-missing</code>).</li>
-          <li>For Debian/Ubuntu: <code>sudo dpkg -i Stagman_*.deb</code></li>
-          <li>For AppImage: <code>chmod +x Stagman_*.AppImage && ./Stagman_*.AppImage</code></li>
+          <li>For Debian/Ubuntu: <code>sudo dpkg -i Lineman_*.deb</code></li>
+          <li>For AppImage: <code>chmod +x Lineman_*.AppImage && ./Lineman_*.AppImage</code></li>
         </ol>
       </details>
     </section>
@@ -383,16 +383,16 @@
     <div class="github-banner">
       <h3>Explore the Source Code</h3>
       <p style="color: var(--muted); margin: 0; max-width: 500px;">
-        Stagman is fully open source. Check out the repository, inspect the architecture, or report issues on GitHub.
+        Lineman is fully open source. Check out the repository, inspect the architecture, or report issues on GitHub.
       </p>
-      <a class="github-btn" href="https://github.com/manastore1591/stagman" target="_blank" rel="noopener">
+      <a class="github-btn" href="https://github.com/manastore1591/lineman" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
         View on GitHub
       </a>
     </div>
 
     <footer>
-      Stagman · Copyright © 2026 <a href="https://github.com/manastore1591" target="_blank" rel="noopener">Devi Srinivas Vasamsetti (Mana Store)</a>
+      Lineman · Copyright © 2026 <a href="https://github.com/manastore1591" target="_blank" rel="noopener">Devi Srinivas Vasamsetti (Mana Store)</a>
     </footer>
   </main>
 
